@@ -19,13 +19,13 @@ public class IntStack {
         return true;
     }
     
-    public boolean pop(int n) {
+    public int pop() {
         if (topIndex-1 < 0)
-            return false;
+            return 0;
         else {
             topIndex--;
-            arr[topIndex] = n;
-            return true;
+            int n = arr[topIndex];
+            return n;
         }
     }
 
@@ -49,6 +49,11 @@ public class IntStack {
     public static void main(String[] args) {
         IntStack st = new IntStack();
         
-
+        //test values
+        st.push(15);
+        st.push(20);
+        System.out.println(st.top());   //stack b4 popped
+        st.pop();
+        System.out.println(st.top());   //stack after popped 
     }
 }
