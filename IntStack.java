@@ -18,6 +18,16 @@ public class IntStack {
         arr[topIndex] = n;
         return true;
     }
+    
+    public boolean pop(int n) {
+        if (topIndex-1 < 0)
+            return false;
+        else {
+            topIndex--;
+            arr[topIndex] = n;
+            return true;
+        }
+    }
 
     public boolean isFull() {
         return (topIndex == 99);
@@ -29,7 +39,7 @@ public class IntStack {
 
     public int top() {
         if (!isEmpty()) {
-            return stackArray[topIndex];
+            return arr[topIndex];
         } else {
             System.out.println("Stack is empty.");
             return -1; 
